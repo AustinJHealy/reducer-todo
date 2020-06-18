@@ -1,14 +1,20 @@
-import React from 'react';
+import React from "react";
 
 const Todo = (props) => {
-console.log(props);
-        return(
-            props.todos.todos.map((item) => {
-                return (
-                    <p>{item.item}</p>
-                )}
-            )
-        )
-    
-}
+  console.log(props);
+
+  return (
+    <div className="Todo">
+      <p
+        className={props.item.completed ? "completed" : ""}
+        onClick={(event) => {
+          event.preventDefault();
+          props.handleCompleted(props.item.id);
+        }}
+      >
+        {props.item.todo}
+      </p>
+    </div>
+  );
+};
 export default Todo;
