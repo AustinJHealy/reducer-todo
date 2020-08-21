@@ -1,9 +1,20 @@
 import React from "react";
+import styled from "styled-components";
+
+const Paragraph = styled.p`
+  color: red;
+  border: 5px dotted blue;
+  font-size: 1rem;
+  font-family: Tahoma, Geneva, sans-serif;
+  border-radius: 10px;
+  margin: 2% 30%;
+  padding: 1%;
+`;
 
 const Todo = (props) => {
   return (
     <div className="Todo">
-      <p
+      <Paragraph
         className={props.item.completed ? "completed" : ""}
         onClick={(event) => {
           event.preventDefault();
@@ -11,7 +22,7 @@ const Todo = (props) => {
         }}
       >
         {props.item.todo}
-      </p>
+      </Paragraph>
     </div>
   );
 };
